@@ -12,7 +12,8 @@ y = iris.target
 plt.figure(figsize=(12, 4))
 
 # Plot per i sepali
-plt.subplot(1, 2, 1)
+
+plt.subplot(1, 4, 1)
 for i in range(3):
     mask = y == i
     plt.scatter(X[mask, 0], X[mask, 1], label=iris.target_names[i])
@@ -22,6 +23,33 @@ plt.title('Distribuzione dei Sepali')
 plt.legend()
 
 # Plot per i petali
+
+plt.subplot(1, 4, 2)
+for i in range(3):
+    mask = y == i
+    plt.scatter(X[mask, 2], X[mask, 3], label=iris.target_names[i])
+plt.xlabel('Lunghezza petalo')
+plt.ylabel('Larghezza petalo')
+plt.title('Distribuzione dei Sepali')
+plt.legend()
+
+plt.subplot(1, 4, 3)
+for i in range(3):
+    mask = y == i
+    plt.scatter(X[mask, 0], X[mask, 2], label=iris.target_names[i])
+plt.xlabel('Lunghezza sepalo')
+plt.ylabel('Lunghezza petalo')
+plt.title('Distribuzione dei Sepali')
+plt.legend()
+
+plt.subplot(1, 4, 4)
+for i in range(3):
+    mask = y == i
+    plt.scatter(X[mask, 1], X[mask, 3], label=iris.target_names[i])
+plt.xlabel('Larghezza petalo')
+plt.ylabel('Larghezza petalo')
+plt.title('Distribuzione dei Sepali')
+plt.legend()
 
 # Ora tocca a te! Prova a fare il plot dei petali!
 # Poi fai commit e push
